@@ -1,8 +1,8 @@
-PHONY: create-practice remove-practice
+.PHONY: create-practice remove-practice
 
- create-practice:
+create-practice:
 	mkdir -p $(NAME)
+	cp PracticeMakefile $(NAME)/Makefile
 
- remove-practice:
+remove-practice:
 	rm -rf $(NAME)
-
