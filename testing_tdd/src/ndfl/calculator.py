@@ -9,7 +9,6 @@
   Свыше 50 000 000           — 22% (с суммы превышения)
 """
 
-# Пороговые значения и ставки
 _BRACKETS = [
     (2_400_000,  0.13,         0),
     (5_000_000,  0.15,   312_000),
@@ -43,10 +42,10 @@ def calculate_tax(income: float) -> float:
     if income < 0:
         raise ValueError(f"Доход не может быть отрицательным: {income}")
 
-    prev_limit = 0
+    prev_limit: float = 0
     for limit, rate, base_tax in _BRACKETS:
         if income <= limit:
             return base_tax + (income - prev_limit) * rate
-        prev_limit: float = 0
+        prev_limit = limit
 
     return 0.0
