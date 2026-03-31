@@ -1,2 +1,6 @@
 setuptools
 pytest
+flake8
+mypy
+build
+twine

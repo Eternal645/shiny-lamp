@@ -1,9 +1,12 @@
 install:
-	pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ ndfl-yakorolmira
+    pip install -r requirements.txt
+    pip install -e .
 
-build:
-	rm -rf dist/
-	python -m build
+test:
+    pytest tests/
 
-upload:
-	python -m twine upload --repository testpypi dist/*
+lint:
+    flake8 src/ tests/
+
+typecheck:
+    mypy src/

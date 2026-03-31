@@ -26,7 +26,7 @@ pip install --index-url https://test.pypi.org/simple/ \
 
 ## Использование
 ```python
-from ndfl import calculate_tax
+from ndfl.calculator import calculate_tax
 
 # Расчёт налога при годовом доходе 200 000 руб.
 tax = calculate_tax(200_000)

@@ -22,5 +22,5 @@ pip install --index-url https://test.pypi.org/simple/ \
 ```
 testing_tdd/    # Пакет ndfl-calculator001 (расчёт НДФЛ)
 testing/        # Упражнения по тестированию
-bash-practice/  # Упражнения по bash
+bash-practice/  # Упражнения по bash( в процессе )
 ```
