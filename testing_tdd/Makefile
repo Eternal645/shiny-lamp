@@ -23,6 +23,3 @@ build:
 
 upload:
 	.venv\Scripts\twine upload --repository testpypi dist/*
-
-docs:
-	python -m pydoc -w ndfl.calculator
