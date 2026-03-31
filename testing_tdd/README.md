@@ -1,7 +1,13 @@
-# FOSSDEV Проекты
+# Проект NDFL-yakorolmira
 
-В данном репозитории содержатся выполненные задания по курсу.
+Этот пакет предназначен для работы с НДФЛ (или опиши кратко, что делает твой код).
 
-## Текущие проекты:
-* **ndfl-yakorolmira** - библиотека для (описание). Находится в папке `testing_tdd/`.
-* [Инструкция по установке и описание](./testing_tdd/README.md)
+## Установка
+Для установки из TestPyPI используйте команду:
+`pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ ndfl-yakorolmira`
+
+## Ссылка на TestPyPI
+[Проект на TestPyPI](https://test.pypi.org/project/ndfl-yakorolmira/)
+
+## Ссылка на репозиторий
+[GitHub Repository](https://github.com/Eternal645/shiny-lamp.git)
