@@ -47,6 +47,6 @@ def calculate_tax(income: float) -> float:
     for limit, rate, base_tax in _BRACKETS:
         if income <= limit:
             return base_tax + (income - prev_limit) * rate
-        prev_limit = limit
+        prev_limit: float = 0
 
     return 0.0

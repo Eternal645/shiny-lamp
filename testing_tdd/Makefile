@@ -1,12 +1,18 @@
-install:
-    pip install -r requirements.txt
-    pip install -e .
+venv:
+	python -m venv .venv
+
+install: venv
+	.venv/bin/pip install -r requirements.txt
+	.venv/bin/pip install -e .
 
 test:
-    pytest tests/
+	.venv/bin/pytest tests/
 
 lint:
-    flake8 src/ tests/
+	.venv/bin/flake8 src/ tests/
 
 typecheck:
-    mypy src/
+	.venv/bin/mypy src/
+
+docs:
+	python -m pydoc -w ndfl.calculator

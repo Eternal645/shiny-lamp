@@ -19,9 +19,7 @@
 
 ## Установка
 ```bash
-pip install --index-url https://test.pypi.org/simple/ \
-            --extra-index-url https://pypi.org/simple/ \
-            ndfl-calculator001
+pip install --index-url https://test.pypi.org/simple/ ndfl-calculator001
 ```
 
 ## Использование
@@ -30,34 +28,34 @@ from ndfl.calculator import calculate_tax
 
 # Расчёт налога при годовом доходе 200 000 руб.
 tax = calculate_tax(200_000)
-print(tax)  # 26000
+print(tax)  # 26000.0
 
 # Расчёт налога при годовом доходе 3 000 000 руб.
 tax = calculate_tax(3_000_000)
-print(tax)  # 402000
+print(tax)  # 402000.0
 ```
 
-## Разработка
+## Последовательность действий для разработки
 
-### Требования
+1. Создать виртуальное окружение: `python -m venv .venv`
+2. Установить зависимости: `pip install -r requirements.txt`
+3. Установить пакет в режиме разработки: `pip install -e .`
+4. Проверить типы: `mypy src/`
+5. Проверить стиль кода: `flake8 src/ tests/`
+6. Запустить тесты: `pytest tests/`
+7. Собрать пакет: `python -m build`
+8. Загрузить на TestPyPI: `twine upload --repository testpypi dist/*`
 
-- Python 3.8+
-- setuptools
-- pytest
-
-### Установка зависимостей
+## Автоматизация через Make
 ```bash
-make install
-```
-
-### Сборка пакета
-```bash
-make build
-```
-
-### Загрузка на TestPyPI
-```bash
-make upload
+make venv       # создать виртуальное окружение
+make install    # установить зависимости и пакет
+make typecheck  # проверка типов
+make lint       # проверка стиля кода
+make test       # запустить тесты
+make docs       # сгенерировать документацию
+make build      # собрать пакет
+make upload     # загрузить на TestPyPI
 ```
 
 ## Ссылки

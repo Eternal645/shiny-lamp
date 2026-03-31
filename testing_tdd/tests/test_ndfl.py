@@ -46,7 +46,6 @@ def test_exact_fourth_bracket_limit():
 
 
 def test_above_max_bracket():
-    # 9_402_000 + 0.22 * (60_000_000 - 50_000_000) = 9_402_000 + 2_200_000 = 11_602_000
     assert calculate_tax(60_000_000) == 11_602_000
 
 
