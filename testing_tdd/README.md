@@ -1,13 +1,66 @@
-# Проект NDFL-yakorolmira
+# ndfl-calculator001
 
-Этот пакет предназначен для работы с НДФЛ (или опиши кратко, что делает твой код).
+Библиотека для расчёта НДФЛ (налога на доходы физических лиц) по прогрессивной шкале, 
+действующей в России с 2025 года.
+
+## Описание
+
+Пакет реализует расчёт подоходного налога по пятиступенчатой системе налогообложения:
+
+| Годовой доход           | Ставка | Формула расчёта                     |
+|-------------------------|--------|-------------------------------------|
+| До 2 400 000 руб.       | 13%    | 13% от дохода                       |
+| 2 400 000 – 5 000 000   | 15%    | 312 000 + 15% с суммы превышения    |
+| 5 000 000 – 20 000 000  | 18%    | 702 000 + 18% с суммы превышения    |
+| 20 000 000 – 50 000 000 | 20%    | 3 402 000 + 20% с суммы превышения  |
+| Свыше 50 000 000        | 22%    | 9 402 000 + 22% с суммы превышения  |
+
+Повышенная ставка применяется только к сумме превышения порога, а не ко всему доходу.
 
 ## Установка
-Для установки из TestPyPI используйте команду:
-`pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ ndfl-yakorolmira`
+```bash
+pip install --index-url https://test.pypi.org/simple/ \
+            --extra-index-url https://pypi.org/simple/ \
+            ndfl-calculator001
+```
 
-## Ссылка на TestPyPI
-[Проект на TestPyPI](https://test.pypi.org/project/ndfl-yakorolmira/)
+## Использование
+```python
+from ndfl import calculate_tax
 
-## Ссылка на репозиторий
-[GitHub Repository](https://github.com/Eternal645/shiny-lamp.git)
+# Расчёт налога при годовом доходе 200 000 руб.
+tax = calculate_tax(200_000)
+print(tax)  # 26000
+
+# Расчёт налога при годовом доходе 3 000 000 руб.
+tax = calculate_tax(3_000_000)
+print(tax)  # 402000
+```
+
+## Разработка
+
+### Требования
+
+- Python 3.8+
+- setuptools
+- pytest
+
+### Установка зависимостей
+```bash
+make install
+```
+
+### Сборка пакета
+```bash
+make build
+```
+
+### Загрузка на TestPyPI
+```bash
+make upload
+```
+
+## Ссылки
+
+- [Проект на TestPyPI](https://test.pypi.org/project/ndfl-calculator001/)
+- [Репозиторий на GitHub](https://github.com/Eternal645/shiny-lamp)
