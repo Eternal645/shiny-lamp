@@ -61,4 +61,4 @@ make upload     # загрузить на TestPyPI
 ## Ссылки
 
 - [Проект на TestPyPI](https://test.pypi.org/project/ndfl-calculator001/)
-- [Репозиторий на GitHub](https://github.com/Eternal645/shiny-lamp)
+- [Репозиторий на GitHub](https://github.com/Eternal645/shiny-lamp/tree/feature/ndfl-calculator001-package)
