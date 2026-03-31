@@ -9,11 +9,9 @@
 Библиотека для расчёта НДФЛ по прогрессивной шкале РФ (с 2025 года).  
 Реализован расчёт налога по пяти ступеням ставок.
 
-**Установка:**
+## Установка:**
 ```bash
-pip install --index-url https://test.pypi.org/simple/ \
-            --extra-index-url https://pypi.org/simple/ \
-            ndfl-calculator001
+pip install --index-url https://test.pypi.org/simple/ ndfl-calculator001
 ```
 
 Подробная документация: [`testing_tdd/README.md`](./testing_tdd/README.md)
