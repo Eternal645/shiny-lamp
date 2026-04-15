@@ -1,0 +1,73 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Use Case Diagram" id="usecaseDiagram">
+    <mxGraphModel dx="1440" dy="829" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="obHdf9MaUEjr_OdagU8e-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fillStyle=auto;fontColor=#ffffff;" value="" vertex="1">
+          <mxGeometry height="820" width="1150" x="10" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" parent="1" style="swimlane;startSize=30;fontSize=16;fontStyle=1;fillColor=none;strokeColor=#000000;" value="File Transfer Service" vertex="1">
+          <mxGeometry height="700" width="700" x="220" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc1" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;" value="Upload File" vertex="1">
+          <mxGeometry height="60" width="160" x="100" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uc2" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;" value="Check Status" vertex="1">
+          <mxGeometry height="60" width="160" x="100" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="uc3" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Store File" vertex="1">
+          <mxGeometry height="60" width="160" x="270" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="uc4" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;" value="Download File" vertex="1">
+          <mxGeometry height="60" width="160" x="430" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uc5" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Send Email Notification" vertex="1">
+          <mxGeometry height="60" width="160" x="430" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="uc6" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Space Alarm" vertex="1">
+          <mxGeometry height="60" width="160" x="270" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="boundary" source="uc1" style="dashed=1;endArrow=open;html=1;endFill=0;" target="uc3" value="&lt;&lt;include&gt;&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="boundary" source="uc5" style="dashed=1;endArrow=open;html=1;endFill=0;" target="uc1" value="&lt;&lt;extend&gt;&gt; {after upload}">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="boundary" source="uc5" style="dashed=1;endArrow=open;html=1;endFill=0;" target="uc4" value="&lt;&lt;extend&gt;&gt; {after download}">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="boundary" source="uc6" style="dashed=1;endArrow=open;html=1;endFill=0;" target="uc3" value="&lt;&lt;extend&gt;&gt; {if storage full}">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="boundary" source="uc4" style="dashed=1;endArrow=open;html=1;endFill=0;" target="uc3" value="&lt;&lt;include&gt;&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sender" parent="1" style="shape=mxgraph.flowchart.actor;whiteSpace=wrap;html=1;fontSize=14;" value="Sender" vertex="1">
+          <mxGeometry height="80" width="60" x="60" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="recipient" parent="1" style="shape=mxgraph.flowchart.actor;whiteSpace=wrap;html=1;fontSize=14;" value="Recipient" vertex="1">
+          <mxGeometry height="80" width="60" x="1000" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="cloud" parent="1" style="shape=mxgraph.flowchart.actor;whiteSpace=wrap;html=1;fontSize=14;" value="Cloud (FileStorage)" vertex="1">
+          <mxGeometry height="80" width="60" x="60" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="sender" style="endArrow=none;html=1;" target="uc1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="sender" style="endArrow=none;html=1;" target="uc2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="recipient" style="endArrow=none;html=1;" target="uc4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="cloud" style="endArrow=none;html=1;" target="uc3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="cloud" style="endArrow=none;html=1;" target="uc6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
